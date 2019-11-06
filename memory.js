@@ -21,7 +21,7 @@ class Memory {
     if (fromIdx === toIdx) {
       return;
     }
-
+    
     if (fromIdx > toIdx) {
       // Iterate forwards
       for (let i = 0; i < size; i++) {
