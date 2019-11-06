@@ -176,3 +176,21 @@ go through array;
 // [0,0,1,1,0],
 // [0,0,0,0,0],
 // [0,0,1,1,0]];
+
+// function stringRotation(str1, str2) {
+
+//   let stringArr = str1.split('');
+
+//   for (let i = 0; i < stringArr.length; i++) {
+//     let temp = stringArr.shift();
+//     stringArr.push(temp);
+//     console.log(stringArr.join(''));
+//     if (stringArr.join('') === str2) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+// console.log('False Case:', stringRotation('amazon', 'azonma'));
+// console.log('True Case:', stringRotation('amazon', 'azonam'));

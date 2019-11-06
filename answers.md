@@ -127,7 +127,6 @@ function product(arr) {
 
 ```javascript
 function zeroArray(arr) {
-
   let zeroRow = [];
   let zeroCol = [];
 
@@ -154,5 +153,23 @@ function zeroArray(arr) {
   }
 
   return arr;
+}
+```
+
+## 12. String rotation
+
+```javascript
+function stringRotation(str1, str2) {
+  let stringArr = str1.split('');
+
+  for (let i = 0; i < stringArr.length; i++) {
+    let temp = stringArr.shift();
+    stringArr.push(temp);
+    console.log(stringArr.join(''));
+    if (stringArr.join('') === str2) {
+      return true;
+    }
+  }
+  return false;
 }
 ```
