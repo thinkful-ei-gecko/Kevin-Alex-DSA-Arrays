@@ -1,4 +1,5 @@
-const memory = require('./memory');
+const Memory = require('./memory');
+const memory = new Memory();
 
 class Array {
   constructor() {
@@ -28,7 +29,7 @@ class Array {
       throw new Error('Array is already empty');
     }
     const val = memory.get(this.ptr + this.length - 1);
-    
+
     // this isn't needed?
     // memory.free(this.ptr + this.length - 1);
 
@@ -56,11 +57,6 @@ class Array {
     }
 
     memory.copy(this.ptr + index, this.ptr + index + 1, this.length - index - 1);
-    // is this the same thing?
-    // memory.copy(this.ptr + index - 1, this.ptr + index, this.length - index - 1);
-
-    // this isn't needed?
-    // memory.free(this.ptr + this.length - 1);
 
     this.length--;
   }
@@ -77,4 +73,30 @@ class Array {
     this._capacity = size;
   }
 }
-Array.SIZE_RATIO = 3;
+
+function main() {
+
+  Array.SIZE_RATIO = 3;
+
+  let arr = new Array();
+  arr.push(3);
+  arr.push(5);
+  arr.push(15);
+  arr.push(19);
+  arr.push(45);
+  arr.push(10);
+  arr.pop();
+  arr.pop();
+  arr.pop();
+
+  // console.log(arr);
+
+  arr.pop();
+  arr.pop();
+  arr.pop();
+  arr.push('tauhida');
+
+  console.log(arr.get(0))
+}
+
+main();
